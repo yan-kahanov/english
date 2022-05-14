@@ -1,5 +1,6 @@
 import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import LessonMenu from "./pages/LessonMenu";
 import Lessons from "./pages/Lessons";
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
       <CssBaseline />
       <HashRouter>
         <Container maxWidth="md">
-          <Lessons />
+            <Routes>
+              <Route path="/" element={<Lessons />}/>
+              <Route path="/lessons/:id" element={<LessonMenu />}/>
+            </Routes>
         </Container>
       </HashRouter>
     </ThemeProvider>
