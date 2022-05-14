@@ -1,10 +1,23 @@
-
+import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { HashRouter } from "react-router-dom";
+import Lessons from "./pages/Lessons";
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      mode: 'dark',
+    }
+  });
+
   return (
-    <div className="App">
-      hello
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <HashRouter>
+        <Container maxWidth="md">
+          <Lessons />
+        </Container>
+      </HashRouter>
+    </ThemeProvider>
   );
 }
 
