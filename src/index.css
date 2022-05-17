@@ -7,3 +7,8 @@
 a {
   text-decoration: none;
 }
+
+/* remove scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+}
