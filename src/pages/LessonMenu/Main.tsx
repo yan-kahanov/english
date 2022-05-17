@@ -1,6 +1,6 @@
 import React from 'react'
 import lessons from '../../lessons.json'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Avatar, Card, CardActionArea, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
 import MenuBookTwoToneIcon from '@mui/icons-material/MenuBookTwoTone';
 import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
@@ -11,7 +11,8 @@ type Props = {
 }
 
 const LessonMenuMain: React.FC<Props> = () => {
-    const {id} = useParams()
+    const params = useParams()
+    const id = +params.id!
     const lesson = lessons.find(lesson => id && lesson.id === +id)
 
     return (
@@ -20,18 +21,20 @@ const LessonMenuMain: React.FC<Props> = () => {
                 {lesson?.description}
             </Title>
             <List>
-                <StyledCard>
-                    <CardActionArea>
-                        <ListItem>
-                            <ListItemAvatar>
-                                <Avatar>
-                                    <MenuBookTwoToneIcon />
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary="Теория" />
-                        </ListItem>
-                    </CardActionArea>
-                </StyledCard>
+                <Link to={`/theory/${id}`}>
+                    <StyledCard>
+                        <CardActionArea>
+                            <ListItem>
+                                <ListItemAvatar>
+                                    <Avatar>
+                                        <MenuBookTwoToneIcon />
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText primary="Теория" />
+                            </ListItem>
+                        </CardActionArea>
+                    </StyledCard>
+                </Link>
                 <StyledCard>
                     <CardActionArea>
                         <ListItem>

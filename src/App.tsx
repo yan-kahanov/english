@@ -2,6 +2,7 @@ import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/materia
 import { HashRouter, Route, Routes } from "react-router-dom";
 import LessonMenu from "./pages/LessonMenu";
 import Lessons from "./pages/Lessons";
+import Theory from "./pages/Theory";
 
 function App() {
   const theme = createTheme({
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Lessons />}/>
               <Route path="/lessons/:id" element={<LessonMenu />}/>
+              <Route path="/theory/:id" element={<Theory />}/>
             </Routes>
         </Container>
       </HashRouter>
