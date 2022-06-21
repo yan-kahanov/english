@@ -1,28 +1,23 @@
-import { List } from "@mui/material";
+import { Stack } from "@mui/material";
 import React from "react";
 import LessonsItem from "./Item";
 import lessons from '../../lessons.json'
-import styled from "@emotion/styled";
 
 type Props = {};
 
 const LessonsList: React.FC<Props> = () => {
 
   return (
-    <StyledList>
-      {lessons.map(lesson => (
+    <Stack marginTop="75px">
+      {lessons.map((lesson, index) => (
         <LessonsItem 
-        key={lesson.id}
-        id={lesson.id}
+        key={index+1}
+        id={index+1}
         description={lesson.description}
         />
       ))}
-    </StyledList>
+    </Stack>
   );
 };
-
-const StyledList = styled(List)`
-  margin-top: 75px;
-`
 
 export default LessonsList;

@@ -1,63 +1,64 @@
-import React from 'react'
-import lessons from '../../lessons.json'
-import { Link, useParams } from 'react-router-dom'
-import { Avatar, Card, CardActionArea, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material'
-import MenuBookTwoToneIcon from '@mui/icons-material/MenuBookTwoTone';
-import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
-import styled from '@emotion/styled'
+import React from "react";
+import lessons from "../../lessons.json";
+import { Link, useParams } from "react-router-dom";
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Stack,
+  Typography,
+} from "@mui/material";
+import MenuBookTwoToneIcon from "@mui/icons-material/MenuBookTwoTone";
+import EmojiEventsTwoToneIcon from "@mui/icons-material/EmojiEventsTwoTone";
 
-type Props = {
-
-}
+type Props = {};
 
 const LessonMenuMain: React.FC<Props> = () => {
-    const params = useParams()
-    const id = +params.id!
-    const lesson = lessons.find(lesson => id && lesson.id === +id)
+  const params = useParams();
+  const id = +params.id!;
+  const lesson = lessons.find((_, index) => id && index+1 === +id);
 
-    return (
-        <>
-            <Title variant='h5' align='center'>
-                {lesson?.description}
-            </Title>
-            <List>
-                <Link to={`/theory/${id}`}>
-                    <StyledCard>
-                        <CardActionArea>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar>
-                                        <MenuBookTwoToneIcon />
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary="Теория" />
-                            </ListItem>
-                        </CardActionArea>
-                    </StyledCard>
-                </Link>
-                <StyledCard>
-                    <CardActionArea>
-                        <ListItem>
-                            <ListItemAvatar>
-                                <Avatar>
-                                    <EmojiEventsTwoToneIcon />
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary="Практика" />
-                        </ListItem>
-                    </CardActionArea>
-            </StyledCard>
-            </List>
-        </>
-    )
-}
+  return (
+    <>
+      <Typography variant="h5" align="center" margin="100px 0 50px 0">
+        {lesson?.description}
+      </Typography>
+      <Stack gap={1}>
+        <Link to={`/theory/${id}`}>
+          <Card>
+            <CardActionArea>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <MenuBookTwoToneIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Теория" />
+              </ListItem>
+            </CardActionArea>
+          </Card>
+        </Link>
+        <Link to={`/practice/${id}`}>
+          <Card>
+            <CardActionArea>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar>
+                    <EmojiEventsTwoToneIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Практика" />
+              </ListItem>
+            </CardActionArea>
+          </Card>
+        </Link>
+      </Stack>
+    </>
+  );
+};
 
-const StyledCard = styled(Card)`
-    margin-bottom: 5px;
-`
-
-const Title = styled(Typography)`
-    margin: 100px 0 25px 0;
-`
-
-export default LessonMenuMain
+export default LessonMenuMain;

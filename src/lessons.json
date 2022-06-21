@@ -1,5 +1,55 @@
 [
-    { "id": 1, "description": "Базовая форма глагола"},
-    { "id": 2, "description": "Местоимения. Вопросительные слова"},
-    { "id": 3, "description": "Глагол to be. Предлоги места. Like/Want"}
+    { 
+        "description": "Базовая форма глагола", 
+        "sentences": [
+            {"eng": "Will she bring?", 
+                "rus": "Она принесёт?", 
+                "suggestions": ["bring", "brought", "brings"]
+            },
+            {"eng": "You will see them", 
+                "rus": "Ты увидишь их", 
+                "suggestions": ["see", "saw", "sees" ]
+            },
+            {"eng": "He won't hear him", 
+                "rus": "Он не услышит его", 
+                "suggestions": ["hear", "hears", "heard"]
+            },
+            {"eng": "Do we buy it?", 
+                "rus": "Мы покупаем это?", 
+                "suggestions": ["buy", "bought", "buys" ]
+            },
+            {"eng": "Does he run?", 
+                "rus": "Он бежит?", 
+                "suggestions": ["run", "ran", "runs" ]
+            },
+            {"eng": "They love me", 
+                "rus": "Они любят меня", 
+                "suggestions": ["love", "loved", "loves" ]
+            },
+            {"eng": "She think about you", 
+                "rus": "Она думает о тебе", 
+                "suggestions": ["think", "thought", "thinks", "about" ]
+            },
+            {"eng": "I don't have a bike", 
+                "rus": "У меня нет велосипеда", 
+                "suggestions": ["have", "had", "bike", "a", "an" ]
+            },
+            {"eng": "He doesn't come on time", 
+                "rus": "Он не приходит вовремя", 
+                "suggestions": ["come", "came", "comes", "on", "at", "time" ]
+            },
+            {"eng": "Did they ask us?", 
+                "rus": "Они спрашивали нас?", 
+                "suggestions": ["ask", "asked", "asks"]
+            },
+            {"eng": "I felt it", 
+                "rus": "Я чувствовал это", 
+                "suggestions": ["feel", "felt", "feels"]
+            },
+            {"eng": "They didn't teach me", 
+                "rus": "Они не научили меня", 
+                "suggestions": ["teach", "taught", "teachs"]
+            }
+        ]
+    }
 ]
