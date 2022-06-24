@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, Chip, Paper } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PracticeHeader from "./Header";
 import lessons from "../../lessons.json";
@@ -34,6 +34,10 @@ const Practice: React.FC<Props> = () => {
 
     setIsDrawerOpen(true)
 };
+
+  useEffect(() => {
+    setWords([])
+  }, [score])
 
   return (
     <div>

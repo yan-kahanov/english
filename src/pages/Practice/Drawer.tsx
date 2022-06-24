@@ -51,8 +51,6 @@ const PracticeDrawer: React.FC<Props> = ({isDrawerOpen, setIsDrawerOpen,
         }
         // setting a new grade list
         localStorage.setItem('grades', JSON.stringify(newGradeList))
-        // clearing words state
-        setWords([])
     }
 
     return (
