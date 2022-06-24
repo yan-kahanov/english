@@ -35,7 +35,7 @@ const PracticeDrawer: React.FC<Props> = ({isDrawerOpen, setIsDrawerOpen,
         // grade finding
         const foundGrade = gradeList.find((grade: Grade) => grade.id === id)
         // new grade value
-        let newGradeValue: number = foundGrade.value ?? 0
+        let newGradeValue: number = foundGrade?.value ?? 0
         if(isAnswerRight && newGradeValue <= 4.95) newGradeValue += 0.05
         else if(isAnswerRight) newGradeValue += 0
         else if(newGradeValue < 0.15) newGradeValue = 0
