@@ -57,6 +57,7 @@ export const MainTable = styled.table`
   & .time {
     writing-mode: vertical-rl;
     text-orientation: upright;
+    -webkit-text-orientation: upright;
   }
 
   @media screen and (max-width: 420px){
