@@ -77,8 +77,6 @@ const Practice: React.FC<Props> = () => {
 };
 
 const Content = styled.div`
-  position: relative;
-  height: 85vh;
   margin-top: 100px;
 `;
 
@@ -98,7 +96,10 @@ export const StyledPaper = styled(Paper)`
 `;
 
 const CheckBtn = styled(Button)`
-  position: absolute;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 852px;
   bottom: 25px;
 `
 
