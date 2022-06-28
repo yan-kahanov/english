@@ -1,22 +1,29 @@
 import { Stack, styled } from '@mui/material'
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { StyledChip } from '.'
 import { Word } from '../../IndexTypes'
+import lessons from '../../lessons.json'
 
 type Props = {
-    suggestions: string[] | undefined
     setWords: (words: Word[]) => void
     words: Word[]
+    sentenceNum: number
 }
 
-const PracticeSuggestions: React.FC<Props> = ({suggestions, setWords, words}) => {
-    const baseSuggestions = ["will", "do", "does", "did", "didn't", "don't", 
-    "won't","doesn't", "he", "she", "it", "they", "them", "you", "i", "us", "me", "him", "her", "we"]
+const PracticeSuggestions: React.FC<Props> = ({setWords, words, sentenceNum}) => {
+    const params = useParams();
+    const id = +params.id!;
+    const lesson = lessons.find((_, index) => index+1 === id);
+    const suggestions = lesson?.sentences[sentenceNum]?.suggestions;
+    const isNegative = lesson?.sentences[sentenceNum]?.isNegative;
+    const negativeSugg: string[] = ["didn't", "don't","doesn't", "won't"]
+    const positiveSugg: string[] = ["did", "do", "does", "will"]
     const addWord = (suggest: Word) => {
         setWords([...words, suggest])
     }
 
-    const fullSuggestions = suggestions?.concat(baseSuggestions)
+    const fullSuggestions = suggestions?.concat(isNegative ? negativeSugg : positiveSugg)
 
     return (
         <StyledStack 
@@ -37,7 +44,6 @@ const PracticeSuggestions: React.FC<Props> = ({suggestions, setWords, words}) =>
 }
 
 const StyledStack = styled(Stack)`
-    margin-top: 100px;
     @media screen and (max-width:375px){
         margin-top: 25px;
     }

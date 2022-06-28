@@ -4,51 +4,55 @@
         "sentences": [
             {"eng": "Will she bring?", 
                 "rus": "Она принесёт?", 
-                "suggestions": ["bring", "brought", "brings"]
+                "suggestions": ["bring", "brought", "brings", "he", "she"]
             },
             {"eng": "You will see them", 
                 "rus": "Ты увидишь их", 
-                "suggestions": ["see", "saw", "sees" ]
+                "suggestions": ["see", "saw", "sees", "you", "they", "them"]
             },
             {"eng": "He won't hear him", 
                 "rus": "Он не услышит его", 
-                "suggestions": ["hear", "hears", "heard"]
+                "suggestions": ["hear", "hears", "heard", "he", "she", "him", "her"],
+                "isNegative": true
             },
             {"eng": "Do we buy it?", 
                 "rus": "Мы покупаем это?", 
-                "suggestions": ["buy", "bought", "buys" ]
+                "suggestions": ["buy", "bought", "buys", "we", "it", "it's"]
             },
             {"eng": "Does he run?", 
                 "rus": "Он бежит?", 
-                "suggestions": ["run", "ran", "runs" ]
+                "suggestions": ["run", "ran", "runs", "he", "she"]
             },
             {"eng": "They love me", 
                 "rus": "Они любят меня", 
-                "suggestions": ["love", "loved", "loves" ]
+                "suggestions": ["love", "loved", "loves", "they", "them", "me", "i"]
             },
             {"eng": "She think about you", 
                 "rus": "Она думает о тебе", 
-                "suggestions": ["think", "thought", "thinks", "about" ]
+                "suggestions": ["think", "thought", "thinks", "about", "he", "she", "you"]
             },
             {"eng": "I don't have a bike", 
                 "rus": "У меня нет велосипеда", 
-                "suggestions": ["have", "had", "bike", "a", "an" ]
+                "suggestions": ["have", "had", "bike", "a", "an", "i"],
+                "isNegative": true
             },
             {"eng": "He doesn't come on time", 
                 "rus": "Он не приходит вовремя", 
-                "suggestions": ["come", "came", "comes", "on", "at", "time" ]
+                "suggestions": ["come", "came", "comes", "on", "at", "in", "time", "he", "she"],
+                "isNegative": true
             },
             {"eng": "Did they ask us?", 
                 "rus": "Они спрашивали нас?", 
-                "suggestions": ["ask", "asked", "asks"]
+                "suggestions": ["ask", "asked", "asks", "us", "our", "they", "them"]
             },
             {"eng": "I felt it", 
                 "rus": "Я чувствовал это", 
-                "suggestions": ["feel", "felt", "feels"]
+                "suggestions": ["feel", "felt", "feels", "it", "it's", "i"]
             },
             {"eng": "They didn't teach me", 
                 "rus": "Они не научили меня", 
-                "suggestions": ["teach", "taught", "teachs"]
+                "suggestions": ["teach", "taught", "teachs", "me", "they", "them"],
+                "isNegative": true
             }
         ]
     }

@@ -21,7 +21,6 @@ const Practice: React.FC<Props> = () => {
   const sentenceNum = React.useMemo(() => (
     getRadnomNum(lesson?.sentences.length ?? 0)
   ), [score]);
-  const suggestions = lesson?.sentences[sentenceNum]?.suggestions;
   const [words, setWords] = React.useState<Word[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [isAnswerRight, setIsAnswerRight] = useState(false)
@@ -51,9 +50,9 @@ const Practice: React.FC<Props> = () => {
         setWords={setWords} 
         />
         <PracticeSuggestions
-          suggestions={suggestions}
           words={words}
           setWords={setWords}
+          sentenceNum={sentenceNum}
         />
         <CheckBtn 
         onClick={checkTranslate} 
