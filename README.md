@@ -1,6 +1,6 @@
 # Demo
 
-https://teffican.github.io/english/
+https://yan-kakhanov.github.io/english/
 
 ## Stack
 
