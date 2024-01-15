@@ -1,6 +1,6 @@
 # Demo
 
-https://yan-kakhanov.github.io/english/
+https://yan-kahanov.github.io/english/
 
 ## Stack
 
